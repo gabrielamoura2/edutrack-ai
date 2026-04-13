@@ -1,4 +1,3 @@
-// Meu primeiro comentário via VS Code
 // Stores user information and allows the user to authenticate  against
 table user {
   auth = true
