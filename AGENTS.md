@@ -287,3 +287,26 @@ After making changes, push to Xano using #tool:xano.xanoscript/push_all_changes_
 - **Xano Statements**: Familiarize yourself with the available statements in XanoScript by consulting the [Function Lexicon](./docs/functions.md). Use control flow statements like `if`, `foreach`, and `try_catch` to manage logic effectively.
 - **User Management**: Most Xano workspaces come with a built-in user auth and user table, avoid recreating these, the user table can be extended with the necessary columns and the the built-in auth functions can be customized accordingly.
 - **Building from Loveable**: If the project is being built from a Loveable-generated website, follow the specific strategy outlined in the [Building from Loveable Guide](./docs/build_from_lovable.md).
+
+## Xano Table Designer: 'subjects' table schema
+
+**Use When:**
+- Creating a new table for managing subjects in the EduTrack AI project.
+- Defining the structure and relationships for subject data.
+
+**What It Does:**
+- Designs the `subjects` table with the specified fields and types.
+- Establishes a foreign key relationship to the `user` table.
+
+**Location:** Files in `tables/` directory
+
+**Schema Definition:**
+
+- `id`: (int, auto-increment, primary key) - Unique identifier for each subject.
+- `name`: (text) - Name of the subject (e.g., "Mathematics", "History").
+- `teacher`: (text) - Name of the teacher for the subject.
+- `hours`: (int) - Number of hours allocated for the subject.
+- `user_id`: (int, foreign key to `user` table's `id` field) - Identifier for the user (teacher/admin) associated with this subject.
+
+**Example Prompt:**
+- "Create a 'subjects' table with fields for id (auto), name (text), teacher (text), hours (int), and a foreign key 'user_id' linking to the 'user' table."
